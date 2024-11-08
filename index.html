@@ -116,7 +116,7 @@
         <a
           class="navbar-brand"
           href="javascript:void(0)"
-          onclick="loadContent('att_ck.html')"
+          onclick="loadContent('attack.html')"
           ><img src="./img/mitre_attack_logo.png" class="attack-logo"
         /></a>
         <button
@@ -135,7 +135,7 @@
             <li class="nav-item">
               <a
                 href="javascript:void(0)"
-                onclick="loadContent('att_ck.html')"
+                onclick="loadContent('attack.html')"
                 class="nav-link"
                 ><b>云原生ATT&CK矩阵</b></a
               >
@@ -144,9 +144,21 @@
         </div>
       </nav>
     </header>
-    <iframe src="att_ck.html" frameborder="0" id="index-content"></iframe>
-    <footer class="footer p-1">
-      <div style="display: flex; justify-content: flex-end">
+    <iframe src="attack.html" frameborder="0" id="index-content"></iframe>
+    <footer
+      class="footer"
+      style="position: relative; height: 80px; text-align: center"
+    >
+      <div style="line-height: 80px">© 2024 NSFOCUS XingYun Lab</div>
+      <div
+        style="
+          position: absolute;
+          right: 0;
+          height: 60px;
+          display: flex;
+          bottom: 10px;
+        "
+      >
         <div style="margin-right: 12px">
           <span style="font-size: 8px; display: block; text-align: center"
             >创新研究院</span
@@ -159,9 +171,6 @@
           >
           <img src="img/contact_qr.jpg" alt="" style="width: 48px" />
         </div>
-      </div>
-      <div style="text-align: right; font-size: 10px; margin-top: 8px">
-        Copyright 2024. XingYun Lab
       </div>
     </footer>
 

@@ -66,9 +66,9 @@ var data = {
         description: "",
         children: {
           注入Sidercar容器:
-            "Sidecar 容器是一种与主应用容器共同运行在同一个 Pod 中的辅助容器。它通常用于增强主应用的功能，比如日志收集、监控、代理等。近年来随着服务网格的流行（例如Envoy Sidecar模式），Sidercar容器也常被作为一种攻击技术，攻击者可以在master节点通过kubectl patch在现有Pod基础上注入Sidecar容器，接着在Sidercar容器执行其恶意代码。",
-          "利用 k8s 控制器部署后门容器（ReplicaSet/DaemonSet/Deplyment）":
-            "如果攻击者拥有controllers权限时可以通过ReplicaSet/DaemonSet/Deplyment来创建后门容器，从而在容器中执行其恶意代码。",
+            "SiderCar 容器是一种与主应用容器共同运行在同一个 Pod 中的辅助容器。它通常用于增强主应用的功能，比如日志收集、监控、代理等。近年来随着服务网格的流行（例如Envoy SiderCar模式），Sidercar容器也常被作为一种攻击技术，攻击者可以在master节点通过kubectl patch在现有Pod基础上注入SiderCar容器，接着在Sidercar容器执行其恶意代码。",
+          "利用 k8s 控制器部署后门容器（ReplicaSet/DaemonSet/Deployment）":
+            "如果攻击者拥有controllers权限时可以通过ReplicaSet/DaemonSet/Deployment来创建后门容器，从而在容器中执行其恶意代码。",
         },
       },
       "计划任务/作业": {
@@ -131,9 +131,9 @@ var data = {
         description: "",
         children: {
           注入Sidercar容器:
-            "Sidecar 容器是一种与主应用容器共同运行在同一个 Pod 中的辅助容器。它通常用于增强主应用的功能，比如日志收集、监控、代理等。近年来随着服务网格的流行（例如Envoy Sidecar模式），Sidercar容器也常被作为一种攻击技术，攻击者可以在master节点通过kubectl patch在现有Pod基础上注入Sidecar容器，接着在Sidercar容器执行其恶意代码。",
-          "利用k8s控制器部署后门容器（ReplicaSet/DaemonSet/Deplyment）":
-            "如果攻击者拥有controllers权限时可以通过ReplicaSet/DaemonSet/Deplyment来创建后门容器，从而在容器中执行其恶意代码。",
+            "SiderCar 容器是一种与主应用容器共同运行在同一个 Pod 中的辅助容器。它通常用于增强主应用的功能，比如日志收集、监控、代理等。近年来随着服务网格的流行（例如Envoy SiderCar模式），Sidercar容器也常被作为一种攻击技术，攻击者可以在master节点通过kubectl patch在现有Pod基础上注入SiderCar容器，接着在Sidercar容器执行其恶意代码。",
+          "利用k8s控制器部署后门容器（ReplicaSet/DaemonSet/Deployment）":
+            "如果攻击者拥有controllers权限时可以通过ReplicaSet/DaemonSet/Deployment来创建后门容器，从而在容器中执行其恶意代码。",
         },
       },
       "计划任务/作业": {

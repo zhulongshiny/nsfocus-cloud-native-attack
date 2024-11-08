@@ -91,23 +91,6 @@ function setIntroduction(title) {
     });
     introOther.innerHTML = html;
   }
-  //   else {
-  //     // 三级目录展示内容设置
-  //     thirdData = data[spices[0]]["children"][spices[1]]["children"];
-  //     Object.keys(thirdData).forEach((k, g) => {
-  //       if (k == spices[2]) {
-  //         description = thirdData[k];
-  //         const i = Object.keys(data).findIndex((item) => item == spices[0]);
-  //         const j = Object.keys(data[spices[0]]["children"]).findIndex(
-  //           (item) => item == spices[1]
-  //         );
-  //         const activeHeader = document.getElementById(
-  //           `access-${i + 1}-${j + 1}-${g + 1}`
-  //         );
-  //         activeHeader.classList.add("active");
-  //       }
-  //     });
-  //   }
   let desc = "";
   const p_list = description.split("\n");
   p_list.forEach((item) => {
@@ -121,18 +104,8 @@ function setIntroduction(title) {
     }
   });
   introDescEl.innerHTML = desc;
-  //   if (typeof description == "string") {
-  //   } else {
-  //     let html = "";
-  //     Object.keys(description).forEach((item, i) => {
-  //       html += `<p>${i + 1}）${item}</p>`;
-  //       html += `<p>${description[item]}</p>`;
-  //     });
-  //     introDescEl.innerHTML = html;
-  //   }
 }
 
 function toDetail(title) {
   parent.postMessage({ action: "loadContent", title: title }, "*");
-  // parent.postMessage({ action: "setIntro", title: title }, "*");
 }
