@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>攻击技术详情</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap-glyphicon.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap-tourist.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/root.css" />
+    <link rel="stylesheet" type="text/css" href="./css/el-row.css" />
+    <link rel="stylesheet" type="text/css" href="./css/el-col.css" />
+    <link rel="stylesheet" type="text/css" href="./css/el-dialog.css" />
+    <link rel="stylesheet" type="text/css" href="./css/el-button.css" />
+    <link rel="stylesheet" type="text/css" href="./css/btn.css" />
+    <link rel="stylesheet" type="text/css" href="./css/el-base.css" />
+    <style>
+      /* pre p {
+        text-indent: 2em;
+      } */
+      pre {
+        margin: 0;
+      }
+    </style>
+    <style>
+      .maincontent {
+        background-color: #fff;
+        width: 100%;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="maincontent row" id="content">
+      <div
+        class="nav flex-column border-right sidebar pt-3 col-xl-2 col-lg-3 pl-3"
+        id="v-tab"
+        role="tablist"
+        aria-orientation="vertical"
+        style="height: 100vh; overflow-y: auto"
+      >
+        <div id="v-tab" role="tablist" aria-orientation="vertical">
+          <span class="heading" id="v-home-tab" aria-selected="false"
+            >攻击技术</span
+          >
+          <div class="sidenav" id="catalogue"></div>
+        </div>
+      </div>
+      <div
+        id="detail-introduction"
+        class="tab-content col-xl-10 col-lg-9 col-md-9 pt-3"
+      >
+        <h3 id="detail-intr-title"></h3>
+        <pre
+          id="detail-intr-desc"
+          style="background-color: #fff; font-size: 16px; text-wrap: initial"
+        ></pre>
+        <div id="detail-other"></div>
+      </div>
+    </div>
+
+    <script>
+      window.onload = function () {
+        const container = document.getElementById("catalogue");
+        let html = "";
+        // 目录生成
+        Object.keys(data).forEach((key, i) => {
+          let first;
+          if ("children" in data[key]) {
+            first = `
+                <div class="sidenav-head" id="access-${i + 1}">
+                    <a href="javascript:void(0)" onclick="setIntroduction('${key}')">${key}</a>
+                    <div
+                    class="expand-button notransition"
+                    id="access-${i + 1}-header"
+                    data-toggle="collapse"
+                    data-target="#access-${i + 1}-body"
+                    aria-expanded="true"
+                    aria-controls="#access-${i + 1}-body"
+                    ></div>
+                </div>
+                `;
+            let first_body_container = "";
+            subData = data[key]["children"];
+            Object.keys(subData).forEach((subkey, j) => {
+              let first_body = "";
+              //   if ("children" in subData[subkey]) {
+              //     let second_body_container = "";
+              //     thirdData = subData[subkey]["children"];
+              //     Object.keys(thirdData).forEach((thirdKey, k) => {
+              //       let second_body = `
+              //         <div class="sidenav">
+              //           <div class="sidenav-head" id="access-${i + 1}-${j + 1}-${
+              //         k + 1
+              //       }">
+              //             <a href="javascript:void(0)" onclick="setIntroduction('${`${key}:${subkey}:${thirdKey}`}')">${thirdKey}</a>
+              //           </div>
+              //         </div>
+              //         `;
+              //       second_body_container += second_body;
+              //     });
+              //     first_body += `
+              //     <div class="sidenav">
+              //         <div class="sidenav-head" id="access-${i + 1}-${j + 1}">
+              //             <a href="javascript:void(0)" onclick="setIntroduction('${`${key}:${subkey}`}')">${subkey}</a>
+              //         </div>
+              //     </div>
+              //     `;
+              //   } else {
+              //     first_body = `
+              //         <div class="sidenav">
+              //             <div class="sidenav-head" id="access-${i + 1}-${j + 1}">
+              //                 <a href="javascript:void(0)" onclick="setIntroduction('${`${key}:${subkey}`}')">${subkey}</a>
+              //             </div>
+              //         </div>
+              //         `;
+              //   }
+              first_body = `
+                <div class="sidenav">
+                    <div class="sidenav-head" id="access-${i + 1}-${j + 1}">
+                        <a href="javascript:void(0)" onclick="setIntroduction('${`${key}:${subkey}`}')">${subkey}</a>
+                    </div>
+                </div>
+                `;
+              first_body_container += first_body;
+            });
+            first += `
+            <div
+                class="sidenav-body collapse show"
+                id="access-${i + 1}-body"
+                aria-labelledby="access-header"
+            >
+            ${first_body_container}
+            </div>
+            `;
+          } else {
+            first = `
+                <div class="sidenav-head" id="access-${i + 1}">
+                    <a href="javascript:void(0)" onclick="setIntroduction('${key}')">${key}</a>
+                </div>
+                `;
+          }
+          html += first;
+        });
+        container.innerHTML = html;
+        const urlParams = new URLSearchParams(window.location.search);
+        setIntroduction(urlParams.get("title"));
+      };
+    </script>
+    <script src="./js/jquery-3.5.1.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/bootstrap-tourist.js"></script>
+    <script src="./js/introduction.js"></script>
+    <script src="./js/detail.js"></script>
+  </body>
+</html>

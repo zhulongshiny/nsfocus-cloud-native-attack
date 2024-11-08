@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- insert analytics here-->
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>云原生ATT&amp;CK矩阵</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap-glyphicon.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap-tourist.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/root.css" />
+    <link rel="stylesheet" type="text/css" href="./css/el-row.css" />
+    <link rel="stylesheet" type="text/css" href="./css/el-col.css" />
+    <link rel="stylesheet" type="text/css" href="./css/el-dialog.css" />
+    <link rel="stylesheet" type="text/css" href="./css/el-button.css" />
+    <link rel="stylesheet" type="text/css" href="./css/btn.css" />
+    <link rel="stylesheet" type="text/css" href="./css/el-base.css" />
+    <style>
+      .el-container {
+        box-sizing: border-box;
+        display: flex;
+        flex: 1;
+        flex-basis: auto;
+        flex-direction: row;
+        min-width: 0;
+      }
+
+      .el-container.is-vertical {
+        flex-direction: column;
+      }
+    </style>
+    <style>
+      .el-aside {
+        box-sizing: border-box;
+        flex-shrink: 0;
+        overflow: auto;
+        width: var(--el-aside-width, 300px);
+      }
+    </style>
+    <style>
+      .el-footer {
+        --el-footer-padding: 0 20px;
+        --el-footer-height: 60px;
+        box-sizing: border-box;
+        flex-shrink: 0;
+        height: var(--el-footer-height);
+        padding: var(--el-footer-padding);
+      }
+    </style>
+    <style>
+      .el-header {
+        --el-header-padding: 0 20px;
+        --el-header-height: 60px;
+        box-sizing: border-box;
+        flex-shrink: 0;
+        height: var(--el-header-height);
+        padding: var(--el-header-padding);
+      }
+    </style>
+    <style>
+      .el-main {
+        --el-main-padding: 20px;
+        box-sizing: border-box;
+        display: block;
+        flex: 1;
+        flex-basis: auto;
+        overflow: auto;
+        padding: var(--el-main-padding);
+      }
+    </style>
+    <style>
+      .el-overlay {
+        background-color: var(--el-overlay-color-lighter);
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        overflow: auto;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 2000;
+      }
+
+      .el-overlay .el-overlay-root {
+        height: 0;
+      }
+    </style>
+    <style>
+      iframe#index-content {
+        height: calc(100vh - 70px);
+      }
+    </style>
+  </head>
+  <body style="padding-top: 66px">
+    <!--stopindex-->
+    <script>
+      function loadContent(page) {
+        document.getElementById("index-content").src = page;
+      }
+      window.addEventListener("message", function (event) {
+        if (event.data.action === "loadContent") {
+          loadContent("detail.html?title=" + event.data.title);
+        }
+      });
+    </script>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a
+          class="navbar-brand"
+          href="javascript:void(0)"
+          onclick="loadContent('att_ck.html')"
+          ><img src="./img/mitre_attack_logo.png" class="attack-logo"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="nav nav-tabs ml-auto">
+            <li class="nav-item">
+              <a
+                href="javascript:void(0)"
+                onclick="loadContent('att_ck.html')"
+                class="nav-link"
+                ><b>云原生ATT&CK矩阵</b></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <iframe src="att_ck.html" frameborder="0" id="index-content"></iframe>
+    <footer class="footer p-1">
+      <div style="display: flex; justify-content: flex-end">
+        <div style="margin-right: 12px">
+          <span style="font-size: 8px; display: block; text-align: center"
+            >创新研究院</span
+          >
+          <img src="img/official_qr.png" alt="" style="width: 48px" />
+        </div>
+        <div style="margin-right: 12px">
+          <span style="font-size: 8px; display: block; text-align: center"
+            >Metarget</span
+          >
+          <img src="img/contact_qr.jpg" alt="" style="width: 48px" />
+        </div>
+      </div>
+      <div style="text-align: right; font-size: 10px; margin-top: 8px">
+        Copyright 2024. XingYun Lab
+      </div>
+    </footer>
+
+    <!--SCRIPTS-->
+    <!--SCRIPTS-->
+    <script src="./js/jquery-3.5.1.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/site.js"></script>
+    <script src="./js/flexsearch.es5.js"></script>
+    <script src="./js/localforage.min.js"></script>
+    <script src="./js/settings.js"></script>
+    <script src="./js/search_babelized.js"></script>
+
+    <script src="./js/matrix.js"></script>
+    <script src="./js/bootstrap-tourist.js"></script>
+    <script src="./js/settings(1).js"></script>
+    <script src="./js/tour-introduction.js"></script>
+    <script src="./js/random_page.js"></script>
+    <script src="./js/detail.js"></script>
+  </body>
+</html>
