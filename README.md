@@ -4,8 +4,6 @@
 
 This repository is used to show the NSFOCUS ATT&CK Framework For Cloud Native that you can learn more about the ATT&CK techniques.
 
-![image-20241108172947663](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20241108172947663.png)
-
 ## Usage
 
 Clone the project, and open the `index.html` file to view the NSFOCUS ATT&CK Framework For Cloud Native.
